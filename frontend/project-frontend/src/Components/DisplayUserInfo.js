@@ -1,6 +1,7 @@
 import axios from "axios";
-import { useEffect, useState, Component } from "react";
+import { useEffect, Component } from "react";
 import useStateRef from "react-usestateref";
+import FormSkeleton from "./FormSkeleton";
 import UserInputForm from "./UserInputForm";
 
 function DisplayUserInfo() {
@@ -31,12 +32,7 @@ function DisplayUserInfo() {
         <div>
 
         {data.map(({firstname, lastname, email, phoneNumber }) => {
-        return <div align = "left">
-            <div >Name: {firstname} {lastname}</div>
-            <div>Email: {email}</div>
-            <div>Phone number: {phoneNumber}</div>
-            <br/>
-            </div>
+        return <FormSkeleton firstname = {firstname} lastname = {lastname} email = {email} phoneNumber = {phoneNumber}/>
       })}
 
         <UserInputForm/>
