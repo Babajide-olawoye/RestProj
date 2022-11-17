@@ -24,6 +24,15 @@ public class UserInfo {
 		this.email = email;
 		this.phoneNumber = phoneNumber;
 	}
+	
+	public UserInfo(String firstname, String lastname, String email, long phoneNumber) {
+		super();
+		this.firstname = firstname;
+		this.lastname = lastname;
+		this.email = email;
+		this.phoneNumber = phoneNumber;
+	}
+
 	public long getId() {
 		return id;
 	}

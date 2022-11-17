@@ -5,6 +5,7 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.CrossOrigin;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
@@ -25,6 +26,11 @@ public class MainController {
 	@RequestMapping(value ="/all", method=RequestMethod.GET)
 	public List<UserInfo> getAllInfo() {
 		return service.getAllInfo();
+	}
+	
+	@RequestMapping(value= "/new/Info", method=RequestMethod.POST)
+	public void saveNewInfo(@RequestBody UserInfo newInfo) {
+		service.postInfo(newInfo);
 	}
 	
 	
