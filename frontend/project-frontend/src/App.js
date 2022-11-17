@@ -1,11 +1,12 @@
 import logo from './logo.svg';
 import './App.css';
 import UserInputForm from './Components/UserInputForm';
+import DisplayUserInfo from './Components/DisplayUserInfo';
 
 function App() {
   return (
     <div className="App">
-      <UserInputForm/>
+      <DisplayUserInfo/>
      
     </div>
   );

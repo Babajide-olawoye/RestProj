@@ -11,6 +11,10 @@ function UserInputForm() {
         <label>Email</label>
         <input type="text" id="email" placeholder="Please input email"/>
     </form>
+
+
+
+
   );
 }
 
