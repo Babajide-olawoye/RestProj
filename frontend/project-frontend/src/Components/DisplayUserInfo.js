@@ -15,6 +15,27 @@ function DisplayUserInfo() {
         }
     };
 
+
+
+    const useHandleDeleteReq = (id, e) => {
+        e.preventDefault();
+        var deleteConfig = {
+            method: 'delete',
+            url: 'http://localhost:8080/api/del/' + id,
+            headers: {
+                'Content-Type': 'application/json'
+            }
+
+        };
+
+        axios(deleteConfig)
+            .then(res => console.log(res))
+            .catch(err => console.log(err))
+
+
+    }
+
+
     useEffect(() => {
         axios(config)
             .then(function (response) {
@@ -25,18 +46,21 @@ function DisplayUserInfo() {
                 console.log(error);
             });
 
-    },[]);
+    }, []);
     console.log(data)
 
     return (
         <div>
 
-        {data.map(({firstname, lastname, email, phoneNumber }) => {
-        return <FormSkeleton firstname = {firstname} lastname = {lastname} email = {email} phoneNumber = {phoneNumber}/>
-      })}
+            {data.map(({ firstname, lastname, email, phoneNumber, id }) => {
+                return <div>
+                    <FormSkeleton firstname={firstname} lastname={lastname} email={email} phoneNumber={phoneNumber} id={id} del={useHandleDeleteReq} />
 
-        <UserInputForm/>
-        
+                </div>
+            })}
+
+            <UserInputForm />
+
         </div>
 
     );
