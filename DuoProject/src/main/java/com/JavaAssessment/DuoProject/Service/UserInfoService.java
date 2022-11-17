@@ -24,5 +24,8 @@ public class UserInfoService {
 	public void postInfo(UserInfo userInfo) {
 		repository.save(userInfo);
 	}
+	public void deleteInfo(Long id) {
+		repository.deleteById(id);
+	}
 	
 }
