@@ -16,6 +16,11 @@ public class UserInfo {
 	String lastname;
 	String email;
 	long phoneNumber;
+	
+	public UserInfo() {
+		
+	}
+	
 	public UserInfo(long id, String firstname, String lastname, String email, long phoneNumber) {
 		super();
 		this.id = id;

@@ -1,5 +1,6 @@
 
 function UserInputForm() {
+    
   return (
     <form>
         <label>First name</label>
@@ -10,6 +11,7 @@ function UserInputForm() {
         <input type="text" id="phone" placeholder="Please input phone number"/>
         <label>Email</label>
         <input type="text" id="email" placeholder="Please input email"/>
+        <button >Submit</button>
     </form>
 
 
